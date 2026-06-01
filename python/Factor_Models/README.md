@@ -95,5 +95,7 @@ os
 
 ## Related Projects
 
-- [Markowitz MVO](https://github.com/Ceschiu/markowitz-mvo) — generates the input portfolio weights
-- [VaR & ES](https://github.com/Ceschiu/VaR-ES-mvo) — risk estimation on the same portfolio
+## Related Projects
+- [Markowitz MVO](../markowitz) — generates the input portfolio weights
+- [VaR & ES](../var-cvar) — risk estimation on the same portfolio
+- [VBA Toolkit](../../vba) — Excel macros and UDFs for analytics
