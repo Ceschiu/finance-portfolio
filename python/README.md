@@ -1,27 +1,31 @@
 # Python — Quantitative finance projects
 
-Tre progetti dimostrativi end-to-end di analisi quantitativa di portafoglio, dal data sourcing al reporting visivo.
+Three end-to-end portfolio analytics projects, from data sourcing to visual reporting. Each project documents methodology and produces reproducible plots.
 
-## Progetti
+---
 
-| # | Cartella | Descrizione | Tecniche |
-|---|----------|-------------|----------|
-| 1 | [`markowitz/`](./Markowitz) | Mean-Variance Optimization su universo S&P 500. Frontiera efficiente, portafoglio Tangency e GMV. | `numpy`, `scipy.optimize`, `cvxpy`, `yfinance` |
-| 2 | [`var-cvar/`](./Var-CVar) | Calcolo Value-at-Risk e Conditional VaR (parametrico, storico, Monte Carlo). Backtesting | `numpy`, `scipy.stats`, `pandas` |
-| 3 | [`factor-models/`](./Factor_Models) | Factor regression CAPM e Fama-French 3-factor su universo di fondi. Attribution analysis | `statsmodels`, `pandas`, `yfinance` |
+## Projects
+
+| # | Folder | Description | Stack |
+|---|--------|-------------|-------|
+| 1 | [`markowitz/`](./markowitz) | Mean-Variance Optimization on a mixed US/EU equity universe. Efficient Frontier, MVP, Tangency Portfolio. | `numpy`, `pandas`, `scipy.optimize`, `yfinance` |
+| 2 | [`Var-CVar/`](./Var-CVar) | Value-at-Risk and Expected Shortfall (parametric, historical, Monte Carlo) on the Tangency Portfolio | `numpy`, `pandas`, `scipy.stats`, `yfinance` |
+| 3 | [`Factor_Models/`](./Factor_Models) | Factor regression — CAPM, Fama-French 3 and 5-factor — on the Tangency Portfolio with attribution analysis | `numpy`, `pandas`, `statsmodels`, `yfinance` |
+
+The three projects form a **single pipeline**: the Markowitz project produces the Tangency Portfolio weights, which are then consumed as input by VaR-ES and Factor Models.
+
+---
 
 ## Stack
 
 - **Core**: `numpy`, `pandas`, `scipy`
-- **Visualization**: `matplotlib`, `seaborn`
-- **Stats / ML**: `statsmodels`, `scikit-learn`
-- **Finance data**: `yfinance`, `pandas_datareader`
-- **Notebooks**: Jupyter
+- **Statistics & regression**: `statsmodels`
+- **Visualization**: `matplotlib`
+- **Market data**: `yfinance`
+- **Optimization**: `scipy.optimize`
+
+---
 
 ## Setup
 
-```bash
-pip install -r requirements.txt
-```
-
-Apri i notebook `.ipynb` con Jupyter o direttamente in VS Code / Cursor.
+Each project is self-contained — `cd` into its folder and run the orchestration script (`e_main.py` for Markowitz and Factor Models, `f_main.py` for VaR-ES). Dependencies are listed in each project's README.
