@@ -1,38 +1,101 @@
-# VBA — Macro e funzioni per analytics di portafoglio
+# VBA Toolkit — Excel macros for portfolio analytics
 
-5 esercizi progressivi di VBA finance, dai pattern base alle ottimizzazioni performance su 1000+ strumenti.
+A collection of 5 progressive VBA exercises covering the patterns most frequently asked in Italian buy-side technical interviews: **multi-sheet lookup with error handling**, **custom financial UDFs** (bond pricing, Duration), **external file I/O** with robust cleanup, and **performance optimization** for large datasets through the range-to-array pattern.
 
-## Esercizi
+---
 
-| # | File | Concetti chiave | Difficoltà |
-|---|------|-----------------|------------|
-| 1 | [`Es1_CalcolaPnL.bas`](./src/Es1_CalcolaPnL.bas) | Range/Cells, For loop, If/Else, formattazione condizionata, idempotenza | ⭐ |
-| 2 | [`Es2_ArricchisciPortafoglio.bas`](./src/Es2_ArricchisciPortafoglio.bas) | Multi-sheet, `Application.Match` + `IsError`, `Select Case`, classificazione rating | ⭐⭐ |
-| 3 | [`Es3_BondPricingDuration.bas`](./src/Es3_BondPricingDuration.bas) | Functions/UDF, composizione di funzioni, pricing bond, Duration di Macaulay e Modificata | ⭐⭐ |
-| 4 | [`Es4_AggiornaPrezziEReport.bas`](./src/Es4_AggiornaPrezziEReport.bas) | File I/O esterno (Workbooks.Open/Close), path dinamici, error handling robusto, performance | ⭐⭐⭐ |
-| 5 | [`Es5_AnalizzaPortafoglio.bas`](./src/Es5_AnalizzaPortafoglio.bas) | Range-to-array, bulk write, Dictionary per aggregazioni, Large/Small, timing | ⭐⭐⭐⭐⭐ |
+## How to Run
 
-## Pattern coperti
+1. Download both files from [`demo/`](./demo) and keep them in the **same folder** (Es 4 uses relative paths via `ThisWorkbook.Path`)
+2. Open `File_per_ripasso_VBA.xlsm` in Excel 365 and enable macros
+3. Press `Alt + F8` to list available macros, select one, and click *Run*
+4. Check the relevant sheet (`Sheet1`, `Anagrafica`, `Bonds`, `PortafoglioPro`, `Report`) for output
 
-- **Lookup robusto multi-foglio**: `Application.Match` + `IsError` invece di `WorksheetFunction.Match`
-- **UDF (User-Defined Functions)** chiamabili come formule native di Excel
-- **File I/O** con apertura/chiusura workbook esterni e path relativi via `ThisWorkbook.Path`
-- **Error handling professionale**: `On Error GoTo` + `CleanExit` + `Resume` per cleanup garantito
-- **Performance optimization**: range-to-array, bulk write, `ScreenUpdating/Calculation/EnableEvents/DisplayAlerts`
-- **Aggregazioni efficienti** con `Scripting.Dictionary` (hash map O(1))
+The `.bas` files in [`src/`](./src) are the VBA modules exported as text — included for code review and version control. They are functionally identical to the modules embedded in the `.xlsm`.
 
-## Come usare
+---
 
-1. Scarica [`demo/File_per_ripasso_VBA.xlsm`](./demo/File_per_ripasso_VBA.xlsm) e [`demo/MarketData.xlsx`](./demo/MarketData.xlsx)
-2. Tieni i due file **nella stessa cartella** (Es 4 usa path relativi)
-3. Apri il file `.xlsm`, abilita le macro
-4. Premi `Alt+F8` e lancia la macro che vuoi testare
+## Project Structure
 
-I file `.bas` in `src/` sono i moduli VBA esportati: già presenti dentro `.xlsm`, ma versionati separatamente per code review e riusabilità.
+| File | Role |
+|------|------|
+| `Es1_CalcolaPnL.bas` | Computes P&L per holding, total row, color-coded by sign |
+| `Es2_ArricchisciPortafoglio.bas` | Multi-sheet enrichment: lookup ticker in `Anagrafica`, retrieve Name/Sector/Rating, classify rating with `Select Case` and conditional color |
+| `Es3_BondPricingDuration.bas` | Three UDFs: `BondPrice`, `DurationMacaulay`, `DurationModificata` — composable, usable as native Excel formulas |
+| `Es4_AggiornaPrezziEReport.bas` | Opens external `MarketData.xlsx`, updates portfolio prices via lookup, recomputes P&L, aggregates by sector, generates report |
+| `Es5_AnalizzaPortafoglio.bas` | Portfolio analytics on 1000+ instruments: P&L vector, top 5 winners/losers, sector aggregation via Dictionary, bulk write |
 
-## Performance benchmark (Es 5)
+---
 
-Macro `AnalizzaPortafoglio` su 1000 strumenti random:
-- Esecuzione tipica: **< 0.3 secondi**
-- Stesso lavoro con loop cella-per-cella: ~5-8 secondi
-- **Speedup ~20-30x** grazie al pattern range-to-array
+## Methodology
+
+**Robust lookup with `Application.Match` + `IsError`** — returns a `Variant` that can be tested for not-found cases, avoiding runtime errors. Combined with `Cells(row, col)` for multi-column retrieval, performs one search per row instead of N (one per attribute):
+
+```vba
+pos = Application.Match(ticker, wsAnag.Columns(posTickAnag), 0)
+If IsError(pos) Then
+    ' handle not found
+Else
+    name = wsAnag.Cells(pos, posNameAnag).Value
+    sector = wsAnag.Cells(pos, posSectAnag).Value
+    rating = wsAnag.Cells(pos, posRateAnag).Value
+End If
+```
+
+**User-Defined Functions (UDFs)** — `BondPrice`, `DurationMacaulay`, `DurationModificata` are typed `Function` callable as native Excel formulas. They demonstrate **function composition**: `DurationMacaulay` calls `BondPrice` for the denominator; `DurationModificata` calls `DurationMacaulay` and divides by `(1+y)`. No code duplication.
+
+**Range-to-array** — the key VBA performance pattern. Load an entire range into a `Variant` array in one I/O operation, process in memory, write back in bulk in one I/O operation. Reduces I/O calls from O(N×M) to O(1):
+
+```vba
+dati = ws.Range("A2:E1001").Value           ' 1 read
+For i = 1 To UBound(dati, 1)
+    pnl(i, 1) = dati(i, 3) * (dati(i, 5) - dati(i, 4))
+Next i
+ws.Range("F2:F1001").Value = pnl            ' 1 write
+```
+
+**Aggregation via `Scripting.Dictionary`** — late-bound hash map with O(1) lookups, used for "group by + sum" patterns. Avoids nested loops over unique values.
+
+**Error handling pattern** — `On Error GoTo ErrHandler` + `CleanExit` label + `Resume CleanExit` guarantees that performance settings are restored and external workbooks are closed even when an error occurs mid-execution.
+
+---
+
+## Performance Benchmark (Es 5)
+
+`AnalizzaPortafoglio` on a synthetic portfolio of 1000 instruments:
+
+| Approach | Execution time |
+|----------|----------------|
+| Cell-by-cell loop (`Cells(i, j).Value` in inner loop) | ~5–8 seconds |
+| Range-to-array + bulk write | **< 0.3 seconds** |
+| **Speedup** | **~20–30×** |
+
+The speedup grows linearly with dataset size: on 10k rows the cell-by-cell approach becomes minute-level while the array approach stays sub-second.
+
+---
+
+## Output
+
+Each macro produces output on dedicated sheets:
+
+- `Sheet1` — main portfolio with computed P&L (color-coded), enriched columns (Name, Sector, Rating), and a summary table on the right
+- `Anagrafica` — instrument master data used as lookup source for Es 2
+- `Bonds` — bond inventory with the three UDF formulas applied in columns F/G/H
+- `PortafoglioPro` — synthetic 1000-instrument portfolio (auto-generated by `Setup_GeneraPortafoglio`)
+- `Report` — generated reports: sector aggregation, top 5 winners/losers, total portfolio P&L, execution metadata
+
+---
+
+## Dependencies
+
+- **Microsoft Excel 365 / 2021 / 2024** with VBA enabled — required for `Application.WorksheetFunction.Unique` (Es 5) and `Large`/`Small` on in-memory arrays
+- No external libraries — uses only native VBA and `Scripting.Runtime` (late-bound `Dictionary` via `CreateObject`)
+- Sheet column headers follow the conventions documented in each macro's banner
+
+---
+
+## Related Projects
+
+- [Markowitz MVO](../python/markowitz) — Mean-Variance portfolio optimization (Python)
+- [VaR & ES](../python/var-cvar) — risk estimation on the optimized portfolio (Python)
+- [Factor Models](../python/factor-models) — CAPM & Fama-French regression (Python)
