@@ -1,0 +1,16 @@
+# Excel files sono binari (no diff, no merge)
+*.xlsx binary
+*.xlsm binary
+*.xls  binary
+*.xlsb binary
+
+# VBA exports sono testo Windows-style (line endings CRLF)
+*.bas  text eol=crlf
+*.cls  text eol=crlf
+*.frm  text eol=crlf
+
+# SQL files
+*.sql  text
+
+# Notebook Jupyter (testo JSON ma trattalo con cura)
+*.ipynb text
