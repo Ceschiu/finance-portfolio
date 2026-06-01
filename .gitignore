@@ -1,0 +1,24 @@
+# Excel temporary lock files (quando apri un xlsm)
+~$*.xlsx
+~$*.xlsm
+~$*.xls
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Python (per dopo)
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.env
+
+# SQL (per dopo)
+*.db-journal
