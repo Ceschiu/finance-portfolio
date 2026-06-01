@@ -97,5 +97,5 @@ Each macro produces output on dedicated sheets:
 ## Related Projects
 
 - [Markowitz MVO](../python/markowitz) — Mean-Variance portfolio optimization (Python)
-- [VaR & ES](../python/var-cvar) — risk estimation on the optimized portfolio (Python)
-- [Factor Models](../python/factor-models) — CAPM & Fama-French regression (Python)
+- [VaR & ES](../python/Var-CVar) — risk estimation on the optimized portfolio (Python)
+- [Factor Models](../python/Factor_Models) — CAPM & Fama-French regression (Python)
