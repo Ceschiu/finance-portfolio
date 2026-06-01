@@ -11,8 +11,8 @@ Ingegnere matematico (Quantitative Finance, Politecnico di Milano) con 2 anni in
 | Cartella | Argomento | Stato |
 |----------|-----------|-------|
 | [`vba/`](./vba) | 5 macro/funzioni VBA per Excel su pattern tipici di finanza | ✅ Completato |
-| `python/` | Markowitz Mean-Variance, VaR/CVaR, Factor Models (Fama-French) | ✅ Completato |
-| `sql/` | Query SQL su dataset finanziari (prezzi, holdings, returns) | 📋 Pianificato |
+| [`python/`](./python) | Markowitz Mean-Variance, VaR/CVaR, Factor Models (Fama-French) | ✅ Completato |
+| [`sql/`](./sql) | Query SQL su dataset finanziari (prezzi, holdings, returns) | 📋 Pianificato |
 
 ## Stack:
 
