@@ -71,8 +71,8 @@ matplotlib
 os
 ```
 
----
-
 ## Related Projects
+
 - [Markowitz MVO](../markowitz) — generates the input portfolio weights
+- [Factor Models](../Factor_Models) — CAPM & Fama-French regression on the same portfolio
 - [VBA Toolkit](../../vba) — Excel macros and UDFs for analytics
