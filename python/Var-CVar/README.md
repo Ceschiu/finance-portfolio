@@ -74,6 +74,5 @@ os
 ---
 
 ## Related Projects
-
-## Related Projects
+- [Markowitz MVO](../markowitz) — generates the input portfolio weights
 - [VBA Toolkit](../../vba) — Excel macros and UDFs for analytics
