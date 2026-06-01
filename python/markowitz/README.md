@@ -63,6 +63,6 @@ matplotlib
 
 ## Related Projects
 
-- [VaR & ES](../Var-CVar) — risk estimation on the Tangency Portfolio
-- [Factor Models](../Factor_Models) — CAPM & Fama-French regression on the Tangency Portfolio
+- [VaR & ES](../var-cvar) — risk estimation on the Tangency Portfolio
+- [Factor Models](../factor-models) — CAPM & Fama-French regression on the Tangency Portfolio
 - [VBA Toolkit](../../vba) — Excel macros and UDFs for analytics

@@ -9,8 +9,8 @@ Technical preparation toolkit for buy-side roles (Portfolio Analyst, ALM Analyst
 | Folder | Topic | Status |
 |--------|-------|--------|
 | [`python/markowitz/`](./python/markowitz) | Mean-Variance Optimization, Tangency & GMV portfolio | ✅ |
-| [`python/var-cvar/`](./python/Var-CVar) | Value-at-Risk and Expected Shortfall on optimized portfolio | ✅ |
-| [`python/factor-models/`](./python/Factor_Models) | CAPM, Fama-French 3/5-factor regression on Tangency Portfolio | ✅ |
+| [`python/var-cvar/`](./python/var-cvar) | Value-at-Risk and Expected Shortfall on optimized portfolio | ✅ |
+| [`python/factor-models/`](./python/factor-models) | CAPM, Fama-French 3/5-factor regression on Tangency Portfolio | ✅ |
 | [`vba/`](./vba) | 5 macros + bond pricing UDFs + range-to-array optimization | ✅ |
 | [`sql/`](./sql) | Window functions, CTE, joins on portfolio datasets | 📋 Planned |
 

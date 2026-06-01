@@ -35,7 +35,7 @@ plot_frontier(frontier=frontier, w_gmv=MVP, w_tg=TgP, mu=mu, Sigma=Sigma, ticker
 
 print(f"=========   Salvo TgP per VaR,ES e CAPM,FF   =========")
 base = os.path.dirname(__file__)
-pd.Series(TgP, index = rend.columns).to_csv(os.path.join(base, "../VaR-ES/TgP_weights.csv"))
-pd.Series(TgP, index = rend.columns).to_csv(os.path.join(base, "../Factor_Model/TgP_weights.csv"))
+pd.Series(TgP, index = rend.columns).to_csv(os.path.join(base, "../var-cvar/TgP_weights.csv"))
+pd.Series(TgP, index = rend.columns).to_csv(os.path.join(base, "../factor-models/TgP_weights.csv"))
 
 print(f"=========   Fine   =========")
