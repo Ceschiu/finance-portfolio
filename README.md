@@ -1,21 +1,32 @@
 # Finance Portfolio
 
-Repository personale del mio percorso di preparazione tecnica per ruoli **Portfolio Analyst**, **ALM Analyst**, **Fund Selection** e **Quantitative Risk** lato buy-side.
+Technical preparation toolkit for buy-side roles (Portfolio Analyst, ALM Analyst, Fund Selection, Quantitative Risk). Includes Python projects on portfolio analytics and risk, VBA macros for Excel-based finance workflows, and SQL exercises on financial datasets.
 
-## Profilo:
+---
 
-Ingegnere matematico (Quantitative Finance, Politecnico di Milano) con 2 anni in **KPMG** su credit risk modelling. Sto consolidando il toolkit tecnico per ruoli buy-side: VBA, Python, SQL, e analisi di portafoglio.
+## Contents
 
-## Contenuto:
+| Folder | Topic | Status |
+|--------|-------|--------|
+| [`python/markowitz/`](./python/markowitz) | Mean-Variance Optimization, Tangency & GMV portfolio | ✅ |
+| [`python/var-cvar/`](./python/var-cvar) | Value-at-Risk and Expected Shortfall on optimized portfolio | ✅ |
+| [`python/factor-models/`](./python/factor-models) | CAPM, Fama-French 3/5-factor regression on Tangency Portfolio | ✅ |
+| [`vba/`](./vba) | 5 macros + bond pricing UDFs + range-to-array optimization | ✅ |
+| [`sql/`](./sql) | Window functions, CTE, joins on portfolio datasets | 📋 Planned |
 
-| Cartella | Argomento | Stato |
-|----------|-----------|-------|
-| [`vba/`](./vba) | 5 macro/funzioni VBA per Excel su pattern tipici di finanza | ✅ Completato |
-| [`python/`](./python) | Markowitz Mean-Variance, VaR/CVaR, Factor Models (Fama-French) | ✅ Completato |
-| [`sql/`](./sql) | Query SQL su dataset finanziari (prezzi, holdings, returns) | 📋 Pianificato |
+Each subfolder contains a dedicated README with full project documentation.
 
-## Stack:
+---
 
-- **VBA** (Excel 365): macro per analytics, lookup multi-foglio, file I/O, range-to-array
-- **Python**: numpy, pandas, scipy, statsmodels, scikit-learn, yfinance, Jupyter
-- **SQL**: SQLite, query analitiche, window functions, CTE
+## Background
+
+MSc in Mathematical Engineering — Quantitative Finance track (Politecnico di Milano). Two years at KPMG on credit risk modelling and validation (Basel IRB, IFRS 9, Solvency II, stress testing). Currently consolidating the buy-side toolkit ahead of interviews for Portfolio Analyst, ALM Analyst, and Fund Selection roles.
+
+---
+
+## Stack
+
+- **Python** — `numpy`, `pandas`, `scipy`, `statsmodels`, `scikit-learn`, `yfinance`, Jupyter
+- **VBA** — native objects, `Scripting.Dictionary`, range-to-array pattern, UDFs
+- **SQL** — SQLite (development), window functions, CTE, complex joins
+- **Excel** — Microsoft 365 with VBA enabled
