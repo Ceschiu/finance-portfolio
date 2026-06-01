@@ -48,7 +48,7 @@ The pipeline separates screening from optimization deliberately:
 - `Frontiera.png` — Efficient Frontier with MVP (red) and TGP (blue) highlighted
 - `Scatter_Single_Name.png` — Risk/return scatter of individual assets
 - Console output with portfolio weights for MVP and TGP
-- `TgP_weights.csv` — Tangency Portfolio weights exported automatically to both the VaR-ES and Factor Model companion projects
+- `TgP_weights.csv` — Tangency Portfolio weights, used as input by the VaR & ES and Factor Models sibling projects in this repository
 ---
 
 ## Dependencies
