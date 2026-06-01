@@ -60,3 +60,9 @@ yfinance
 scipy
 matplotlib
 ```
+
+## Related Projects
+
+- [VaR & ES](../Var-CVar) — risk estimation on the Tangency Portfolio
+- [Factor Models](../Factor_Models) — CAPM & Fama-French regression on the Tangency Portfolio
+- [VBA Toolkit](../../vba) — Excel macros and UDFs for analytics
