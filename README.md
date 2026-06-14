@@ -1,6 +1,6 @@
 # Finance Portfolio
 
-Technical preparation toolkit for buy-side roles (Portfolio Analyst, ALM Analyst, Fund Selection, Quantitative Risk). Includes Python projects on portfolio analytics and risk, VBA macros for Excel-based finance workflows, ... and a SQL module with a synthetic finance database and analytics queries.
+Technical preparation toolkit for buy-side roles (Portfolio Analyst, ALM Analyst, Fund Selection, Quantitative Risk). Includes Python projects on portfolio analytics and risk, VBA macros for Excel-based finance workflows, and a SQL module with a synthetic finance database and analytics queries.
 
 ---
 

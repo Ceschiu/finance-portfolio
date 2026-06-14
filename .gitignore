@@ -20,8 +20,7 @@ __pycache__/
 venv/
 .env
 
-# SQL (per dopo)
+# SQL
 *.db-journal
 finance.db
 query.sql
-
