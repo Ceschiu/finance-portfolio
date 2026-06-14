@@ -99,3 +99,4 @@ Each macro produces output on dedicated sheets:
 - [Markowitz MVO](../python/markowitz) — Mean-Variance portfolio optimization (Python)
 - [VaR & ES](../python/var-cvar) — risk estimation on the optimized portfolio (Python)
 - [Factor Models](../python/factor-models) — CAPM & Fama-French regression (Python)
+- [SQL Module](../sql) — synthetic SQLite finance DB + buy-side analytics queries

@@ -66,3 +66,4 @@ matplotlib
 - [VaR & ES](../var-cvar) — risk estimation on the Tangency Portfolio
 - [Factor Models](../factor-models) — CAPM & Fama-French regression on the Tangency Portfolio
 - [VBA Toolkit](../../vba) — Excel macros and UDFs for analytics
+- [SQL Module](../../sql) — synthetic SQLite finance DB + buy-side analytics queries

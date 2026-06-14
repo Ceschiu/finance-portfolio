@@ -1,6 +1,6 @@
 # Finance Portfolio
 
-Technical preparation toolkit for buy-side roles (Portfolio Analyst, ALM Analyst, Fund Selection, Quantitative Risk). Includes Python projects on portfolio analytics and risk, VBA macros for Excel-based finance workflows, and SQL exercises on financial datasets.
+Technical preparation toolkit for buy-side roles (Portfolio Analyst, ALM Analyst, Fund Selection, Quantitative Risk). Includes Python projects on portfolio analytics and risk, VBA macros for Excel-based finance workflows, ... and a SQL module with a synthetic finance database and analytics queries.
 
 ---
 
@@ -12,7 +12,7 @@ Technical preparation toolkit for buy-side roles (Portfolio Analyst, ALM Analyst
 | [`python/var-cvar/`](./python/var-cvar) | Value-at-Risk and Expected Shortfall on optimized portfolio | ✅ |
 | [`python/factor-models/`](./python/factor-models) | CAPM, Fama-French 3/5-factor regression on Tangency Portfolio | ✅ |
 | [`vba/`](./vba) | 5 macros + bond pricing UDFs + range-to-array optimization | ✅ |
-| [`sql/`](./sql) | Window functions, CTE, joins on portfolio datasets | 📋 Planned |
+| [`sql/`](./sql) | Synthetic SQLite finance DB + 9 buy-side analytics queries (JOIN, CTE, window functions) | ✅ |
 
 Each subfolder contains a dedicated README with full project documentation.
 
@@ -28,5 +28,5 @@ MSc in Mathematical Engineering — Quantitative Finance track (Politecnico di M
 
 - **Python** — `numpy`, `pandas`, `scipy`, `statsmodels`, `scikit-learn`, `yfinance`, Jupyter
 - **VBA** — native objects, `Scripting.Dictionary`, range-to-array pattern, UDFs
-- **SQL** — SQLite (development), window functions, CTE, complex joins
+- **SQL** — SQLite, window functions (`LAG`, `ROW_NUMBER`, frame `ROWS BETWEEN`), CTEs, correlated subqueries, multi-table joins with date anchoring
 - **Excel** — Microsoft 365 with VBA enabled

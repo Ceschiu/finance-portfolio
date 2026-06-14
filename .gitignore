@@ -13,7 +13,7 @@ desktop.ini
 .idea/
 *.swp
 
-# Python (per dopo)
+# Python
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
@@ -22,3 +22,6 @@ venv/
 
 # SQL (per dopo)
 *.db-journal
+finance.db
+query.sql
+

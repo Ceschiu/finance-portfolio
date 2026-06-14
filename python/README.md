@@ -29,3 +29,10 @@ The three projects form a **single pipeline**: the Markowitz project produces th
 ## Setup
 
 Each project is self-contained — `cd` into its folder and run the orchestration script (`e_main.py` for Markowitz and Factor Models, `f_main.py` for VaR&ES). Dependencies are listed in each project's README.
+
+---
+
+## Related Modules
+
+- [VBA Toolkit](../vba) — Excel macros and UDFs for analytics
+- [SQL Module](../sql) — synthetic SQLite finance DB + buy-side analytics queries
