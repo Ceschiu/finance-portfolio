@@ -5,9 +5,9 @@
 *.xlsb binary
 
 # VBA exports sono testo Windows-style (line endings CRLF)
-*.bas  text eol=crlf
-*.cls  text eol=crlf
-*.frm  text eol=crlf
+*.bas  text eol=crlf linguist-language=VBA
+*.cls  text eol=crlf linguist-language=VBA
+*.frm  text eol=crlf linguist-language=VBA
 
 # SQL files
 *.sql  text
