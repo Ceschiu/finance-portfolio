@@ -19,6 +19,14 @@ To change the asset universe or time window, edit `a_data.py`.
 
 ---
 
+## Notebook Demo
+
+For a narrative walkthrough of the full pipeline (data sourcing → screening → optimization → frontier visualization), see [`markowitz_demo.ipynb`](./markowitz_demo.ipynb). It reproduces the analysis with embedded plots and explanatory commentary including a final section on conclusions and limitations (estimation error, in-sample bias, long-only constraint, transaction costs, static allocation).
+
+Ideal for a visual review without running the CLI pipeline.
+
+---
+
 ## Project Structure
 
 | File | Role |
@@ -28,6 +36,7 @@ To change the asset universe or time window, edit `a_data.py`.
 | `c_optimizer.py` | Computes MVP, Tangency Portfolio, and Efficient Frontier using `scipy.optimize` |
 | `d_plotting.py` | Plots the Efficient Frontier with MVP and TGP annotated; prints portfolio weights |
 | `e_main.py` | Orchestrates the full pipeline |
+| `markowitz_demo.ipynb` | Narrative Jupyter walkthrough of the full pipeline with embedded plots, commentary, and a Conclusions & Limitations section |
 
 ---
 
