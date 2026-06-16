@@ -11,7 +11,7 @@
 
 # SQL files
 *.sql  text
+*.sql  linguist-detectable=true
 
 # Notebook Jupyter (testo JSON ma trattalo con cura)
 *.ipynb text
-*.ipynb merge=union
