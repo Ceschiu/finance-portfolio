@@ -14,3 +14,4 @@
 
 # Notebook Jupyter (testo JSON ma trattalo con cura)
 *.ipynb text
+*.ipynb merge=union
