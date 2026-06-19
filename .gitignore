@@ -24,3 +24,7 @@ venv/
 *.db-journal
 finance.db
 query.sql
+
+# Pytest auto-generated cache
+.pytest_cache/
+**/.pytest_cache/

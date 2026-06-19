@@ -77,3 +77,4 @@ os
 - [Factor Models](../factor-models) — CAPM & Fama-French regression on the same portfolio
 - [VBA Toolkit](../../vba) — Excel macros and UDFs for analytics
 - [SQL Module](../../sql) — synthetic SQLite finance DB + buy-side analytics queries
+- [Claude Skills](../../claude-skills) — custom Agent Skills for DCF, ratios, interview prep

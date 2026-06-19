@@ -13,6 +13,7 @@ Technical preparation toolkit for buy-side roles (Portfolio Analyst, ALM Analyst
 | [`python/factor-models/`](./python/factor-models) | CAPM, Fama-French 3/5-factor regression on Tangency Portfolio | ✅ |
 | [`vba/`](./vba) | 5 macros + bond pricing UDFs + range-to-array optimization | ✅ |
 | [`sql/`](./sql) | Synthetic SQLite finance DB + 9 buy-side analytics queries (JOIN, CTE, window functions) | ✅ |
+| [`claude-skills/`](./claude-skills) | 3 custom Claude Agent Skills (DCF valuation, financial ratios, interview-answer formatting) | ✅ |
 
 Each subfolder contains a dedicated README with full project documentation.
 
@@ -30,3 +31,4 @@ MSc in Mathematical Engineering — Quantitative Finance track (Politecnico di M
 - **VBA** — native objects, `Scripting.Dictionary`, range-to-array pattern, UDFs
 - **SQL** — SQLite, window functions (`LAG`, `ROW_NUMBER`, frame `ROWS BETWEEN`), CTEs, correlated subqueries, multi-table joins with date anchoring
 - **Excel** — Microsoft 365 with VBA enabled
+- **Claude Agent Skills** — custom `SKILL.md` packaging, JSON-contract Python engines, anti-collision description design

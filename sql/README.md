@@ -118,3 +118,4 @@ The helper prints results as a formatted pandas DataFrame.
 - [VaR & ES](../python/var-cvar) — risk estimation on the Tangency Portfolio (Python)
 - [Factor Models](../python/factor-models) — CAPM & Fama-French regression (Python)
 - [VBA Toolkit](../vba) — Excel macros and UDFs for analytics
+- [Claude Skills](../../claude-skills) — custom Agent Skills for DCF, ratios, interview prep
