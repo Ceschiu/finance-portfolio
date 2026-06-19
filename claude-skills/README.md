@@ -85,11 +85,7 @@ See each skill's own `README.md` for its input/output contract and examples.
 
 ## Notes on hooks and MCP servers
 
-This folder contains **skills only**, not hooks or MCP servers. A separate
-[`Cheatsheet_Skills_Hooks_MCP.html`](../Cheatsheet_Skills_Hooks_MCP.html) in the
-parent folder documents the three mechanisms side-by-side. For my buy-side use
-case skills cover the relevant ground; hooks and MCP servers were studied but
-intentionally not implemented in this repo.
+This folder contains **skills only**, not hooks or MCP servers.
 
 ---
 
