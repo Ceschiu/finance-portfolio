@@ -1,6 +1,6 @@
 ---
 name: ratio-analysis
-description: Compute liquidity, leverage, profitability and efficiency ratios of a company from its financial statements (current, quick, D/E, ROE, ROA...). Use when the user asks for a company's financial ratios and provides balance-sheet / income-statement items. Do not use for intrinsic/DCF valuation — see dcf-analyzer.
+description: Compute liquidity, leverage, profitability and efficiency ratios of a company from balance-sheet / income-statement items. Trigger if user asks for financial ratios. Not for DCF — see dcf-analyzer.
 license: MIT
 allowed-tools: Read, Write, Bash
 ---
