@@ -1,6 +1,6 @@
 ---
 name: interview-answer-formatter
-description: Structure a buy-side / finance interview answer using template (definition → intuition → formula → use case → pitfalls). Not for valuation or ratio computation (see dcf-analyzer, ratio-analysis). formats an explanation, it does not run calculations.
+description: Structure a buy-side / finance interview answer using template (definition → intuition → formula → use case → pitfalls). Not for valuation or ratio computation (see dcf-analyzer, ratio-analysis).
 license: MIT
 ---
 
