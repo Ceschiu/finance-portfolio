@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def screen_ticker(prices: pd.DataFrame, info: pd.DataFrame, n:int, NaN_treshold: float = 0.05, drawdown_treshold: float = -0.6, vol_treshold: float = 0.5, verbose: bool = False) -> tuple[list, pd.DataFrame]:
+def screen_ticker(prices: pd.DataFrame, n:int, NaN_treshold: float = 0.05, drawdown_treshold: float = -0.6, vol_treshold: float = 0.5, verbose: bool = False) -> tuple[list, pd.DataFrame]:
     """Screen tickers universe and return top n by composite score and their final score"""
     prices_filtered = prices.copy() # copy in order not to change the original df
     NaN_counter = prices.isna().sum() # Count NaN values and clear
