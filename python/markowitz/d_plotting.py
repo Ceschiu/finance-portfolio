@@ -43,12 +43,12 @@ def print_weights(w: np.ndarray, tickers: list, name: str):
     return
 
 # if __name__ == "__main__":
-#     from a_data import get_returns, tickers, info, start, end
+#     from a_data import get_returns, tickers, start, end
 #     from b_screening import screen_ticker
 #     from c_optimizer import compute_stats, min_variance_ptf, max_sharpe, efficient_frontier
 
 #     rend = get_returns(tickers, start, end)
-#     rend_ok, score = screen_ticker(rend, info, n=20)
+#     rend_ok, score = screen_ticker(rend, n=20)
 #     mu, Sigma = compute_stats(rend_ok)
 #     w_gmv = min_variance_ptf(mu, Sigma)
 #     w_tg = max_sharpe(mu, Sigma, rf=0.04)
