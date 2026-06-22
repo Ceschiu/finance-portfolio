@@ -39,7 +39,7 @@ def print_weights(w: np.ndarray, tickers: list, name: str):
     """Stampa in maniera ordinata i pesi del ptf name"""
     df = pd.DataFrame(index = tickers, data ={"peso": w})
     df = df[df["peso"]>0]
-    print(f"=== {name} === \n {df["peso"].map('{:.1%}'.format)}")
+    print(f"=== {name} === \n {df['peso'].map('{:.1%}'.format)}")
     return
 
 # if __name__ == "__main__":
