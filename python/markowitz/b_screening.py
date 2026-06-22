@@ -40,7 +40,7 @@ def screen_ticker(prices: pd.DataFrame, info: pd.DataFrame, n:int, NaN_treshold:
     if len(score_df)> n: # Se ho un numero di ticker superiore a quanto ricchiesto, prendo i migliori
         for ticker in score_df.index[n:]: # elimino gli ultimi ticker fino ad averne n
             if verbose: # Stampa se richiesto il perchè elimino i ticker
-                print(f"Eliminato {ticker} poichè non presente nei primi {n} tickers, possedendo uno Score_Totale= {score_df["score_SharpeCorr"].loc[ticker]}, fatto da Sharpe_Score= {score_df["score_sharpe"].loc[ticker]} e Corr_Score ={score_df["score_corr"].loc[ticker]}")
+                print(f"Eliminato {ticker} poichè non presente nei primi {n} tickers, possedendo uno Score_Totale= {score_df['score_SharpeCorr'].loc[ticker]}, fatto da Sharpe_Score= {score_df['score_sharpe'].loc[ticker]} e Corr_Score ={score_df['score_corr'].loc[ticker]}")
             score_df = score_df.drop(index = ticker) 
             rend_filtered = rend_filtered.drop(columns=ticker)
             
