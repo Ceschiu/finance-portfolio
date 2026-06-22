@@ -2,6 +2,12 @@ import pandas as pd
 import numpy as np
 from scipy.optimize import minimize
 
+class OptimizationError(Exception):
+    """Sollevata quando un ottimizzatore Markowitz non converge."""
+    pass
+
+
+
 def compute_stats(rend: pd.DataFrame) -> tuple[pd.Series, pd.DataFrame]:
     """Calcola i rendimenti medi e la matrice varianza-covarianza annualizzati"""
 
@@ -22,9 +28,8 @@ def min_variance_ptf(mu:pd.Series, Sigma:pd.DataFrame) -> np.ndarray:
     constr = {"type":"eq", "fun": lambda x: x.sum()-1} # Richiedo che i pesi sommino a 1
     w = minimize(fun= obiettivo, bounds= boundaries, constraints= constr, method="SLSQP", x0=w0, options={"ftol": 1e-12}) # Minimizzo la funzione
 
-    if not w.success: # Flag per errore di convergenza
-        print("Errore di convergenza")
-        return 0
+    if not w.success:
+        raise OptimizationError(f"min_variance_ptf: solver non converged. status='{w.message}'")
 
     w.x = np.where(w.x < 1e-6, 0, w.x) # I pesi troppo piccoli vengono impostati a 0
 
@@ -43,8 +48,7 @@ def max_sharpe(mu:pd.Series, Sigma:pd.DataFrame, rf: float) -> np.ndarray:
     w = minimize(fun= obiettivo, bounds= boundaries, constraints= constr, method="SLSQP", x0=w0, options={"ftol": 1e-12}) # Minimizzo la funzione
     
     if not w.success: # Flag per errore di convergenza
-        print("Errore di convergenza")
-        return 0
+        raise OptimizationError(f"max_sharpe: solver non converged. status='{w.message}'")
 
     w.x = np.where(w.x < 1e-6, 0, w.x)  # I pesi troppo piccoli vengono impostati a 0
 
@@ -69,8 +73,7 @@ def efficient_frontier(mu:pd.Series, Sigma:pd.DataFrame, n_points:int) -> list:
         w = minimize(fun= obiettivo, bounds= boundaries, constraints= constr, method="SLSQP", x0=w0, options={"ftol": 1e-12}) # Minimizzo la funzione
 
         if not w.success: # Flag per errore di convergenza
-            print("Errore di convergenza")
-            return 0
+            raise OptimizationError(f"efficient_frontier: solver non converged. status='{w.message}'")
 
         w.x = np.where(w.x < 1e-6, 0, w.x) # I pesi troppo piccoli vengono impostati a 0
         frontier.append(w.x) 
@@ -80,11 +83,11 @@ def efficient_frontier(mu:pd.Series, Sigma:pd.DataFrame, n_points:int) -> list:
 
 
 # if __name__ == "__main__":
-#     from a_data import get_returns, tickers, start, end
+#     from a_data import get_returns, tickers, info, start, end
 #     from b_screening import screen_ticker
     
 #     rend = get_returns(tickers, start, end)
-#     rend_ok, score = screen_ticker(rend, n=20)
+#     rend_ok, score = screen_ticker(rend, info, n=20)
     
 #     mu, Sigma = compute_stats(rend_ok)
 #     w_gmv = min_variance_ptf(mu, Sigma)
