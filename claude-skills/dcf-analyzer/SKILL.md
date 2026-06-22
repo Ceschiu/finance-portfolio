@@ -1,6 +1,6 @@
 ---
 name: dcf-analyzer
-description: Build a DCF valuation of a company: enterprise value, equity value, fair value per share. Use when the user provides FCF and WACC and asks for intrinsic value. Do not use for financial institutions.
+description: Build a DCF valuation of a company (enterprise value, equity value, fair value per share). Use when the user provides FCF and WACC and asks for intrinsic value. Do not use for financial institutions.
 license: MIT
 allowed-tools: Read, Write, Bash
 ---
