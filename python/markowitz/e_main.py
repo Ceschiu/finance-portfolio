@@ -1,4 +1,4 @@
-from a_data import tickers, info, start, end, get_returns, get_prices
+from a_data import tickers, start, end, get_returns, get_prices
 from b_screening import screen_ticker
 from c_optimizer import compute_stats, min_variance_ptf, max_sharpe, efficient_frontier
 from d_plotting import plot_frontier, print_weights
@@ -11,7 +11,7 @@ print(f"=========   Scarico i prezzi di tutti i ticker   =========")
 prices = get_prices(tickers=tickers, start=start, end=end)
 
 print(f"=========   Pulisco il Db   =========")
-selected_tickers, score = screen_ticker(prices=prices, info=info, n=20, NaN_treshold=0.05, drawdown_treshold=-0.6, vol_treshold=0.5, verbose=True)
+selected_tickers, score = screen_ticker(prices=prices, n=20, NaN_treshold=0.05, drawdown_treshold=-0.6, vol_treshold=0.5, verbose=True)
 
 print(f"=========   Scarico i dati e calcolo i log-returns dei Ticker selezionati   =========")
 rend = get_returns(tickers= selected_tickers, start=start, end=end)
