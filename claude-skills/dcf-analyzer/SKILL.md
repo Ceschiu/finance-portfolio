@@ -1,6 +1,6 @@
 ---
 name: dcf-analyzer
-description: Build a Discounted Cash Flow (DCF) valuation of a company. Use when the user provides FCF and WACC of the company, asks for the intrinsic value of the company, or asks for the fair value per share. Do not use if the company is a financial institution.
+description: Build a DCF valuation of a company: enterprise value, equity value, fair value per share. Use when the user provides FCF and WACC and asks for intrinsic value. Do not use for financial institutions.
 license: MIT
 allowed-tools: Read, Write, Bash
 ---
