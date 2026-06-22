@@ -80,11 +80,11 @@ def efficient_frontier(mu:pd.Series, Sigma:pd.DataFrame, n_points:int) -> list:
 
 
 # if __name__ == "__main__":
-#     from a_data import get_returns, tickers, info, start, end
+#     from a_data import get_returns, tickers, start, end
 #     from b_screening import screen_ticker
     
 #     rend = get_returns(tickers, start, end)
-#     rend_ok, score = screen_ticker(rend, info, n=20)
+#     rend_ok, score = screen_ticker(rend, n=20)
     
 #     mu, Sigma = compute_stats(rend_ok)
 #     w_gmv = min_variance_ptf(mu, Sigma)
