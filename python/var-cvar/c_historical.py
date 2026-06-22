@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 def VaR_Historical(w:pd.Series, rend:pd.DataFrame, alpha:float = 0.95) -> tuple[float,float]:
-    """Calcola il VaR e l'ES annualizzati di un portafoglio, utilizzando l'Historical Simulation"""
+    """Calcola il VaR e l'ES daily di un portafoglio, utilizzando l'Historical Simulation"""
     # Calcolo rendimenti storici del ptf
     rend_ptf = rend@w
 
