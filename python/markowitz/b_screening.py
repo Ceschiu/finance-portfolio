@@ -49,9 +49,9 @@ def screen_ticker(prices: pd.DataFrame, n:int, NaN_treshold: float = 0.05, drawd
 
 
 # if __name__ == "__main__":
-#     from a_data import get_returns, tickers, info, start, end
+#     from a_data import get_returns, tickers, start, end
 
 #     rend = get_returns(tickers, start, end)
-#     rend_ok, score = screen_ticker(rend, info, n=20, verbose=True)
+#     rend_ok, score = screen_ticker(rend, n=20, verbose=True)
 #     print(f"Ticker selezionati: {list(rend_ok.columns)}")
 #     print(f"\nScore:\n{score}")
