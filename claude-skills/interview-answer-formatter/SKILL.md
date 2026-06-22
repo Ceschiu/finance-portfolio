@@ -1,6 +1,6 @@
 ---
 name: interview-answer-formatter
-description: Structure a technical answer for the user as if it were an interview answer. Use when the user asks to prepare, structure, or rehearse an answer to a technical buy-side / finance interview question. Do not use to compute a valuation or financial ratios (see dcf-analyzer / ratio-analysis); this skill formats an explanation, it does not run calculations.
+description: Structure a buy-side / finance interview answer using template (definition → intuition → formula → use case → pitfalls). Not for valuation or ratio computation (see dcf-analyzer, ratio-analysis). formats an explanation, it does not run calculations.
 license: MIT
 ---
 
