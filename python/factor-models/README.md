@@ -71,6 +71,34 @@ Fama-French 5-factor monthly data (`F-F_Research_Data_5_Factors_2x3.csv`) must b
 
 ---
 
+## Why is R² moderate (~0.58–0.61)?
+
+The R² of the three regressions (CAPM, FF3, FF5) sits around 0.58–0.61 on the
+Tangency Portfolio, well below the ~0.85+ one would expect from a diversified
+US large-cap equity portfolio. This is **not a bug** — it reflects the
+cross-asset composition of the TgP that comes out of the Markowitz step.
+
+The Tangency Portfolio is approximately:
+
+| Bucket | Weight | Reason FF factors don't fully explain it |
+|--------|--------|------------------------------------------|
+| US large-cap equity (AAPL, ABBV, CAT, GS, MSFT) | ~58% | Explained well by `Mkt-RF` (US market factor) |
+| Gold ETF (`GLD`) | ~32% | Commodity, structurally decorrelated from equity factors |
+| EU equity (`MC.PA`, `SIE.DE`) | ~10% | Fama-French factors are US-only; EU equity carries an idiosyncratic component |
+
+So roughly **42% of the portfolio is not US equity** — and the Fama-French
+factors, by construction, regress on the US market. R² 0.58 is exactly what
+this asset mix produces.
+
+**To get a higher R²** the regression universe would need a different factor
+set: a global / international market factor, or an explicit commodity factor
+(e.g. gold spot, oil), or a dedicated EU equity factor. In a follow-up these
+could be tested, but the current analysis is intentionally kept on the
+canonical FF3/FF5 setup to show how a standard factor model decomposes a
+mixed-asset portfolio.
+
+---
+
 ## Output
 
 - `Factor_Analysis.png` — 4-panel chart: R² comparison, FF5 betas, return attribution, alpha across models
