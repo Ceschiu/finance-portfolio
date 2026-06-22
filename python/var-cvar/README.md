@@ -42,6 +42,7 @@ To change the portfolio or time window, edit `a_data.py`.
 - **Historical**: no distributional assumption, captures fat tails directly from data
 - **Monte Carlo**: flexible, but still assumes normality at the asset level
 
+All VaR/ES values are daily (single-period). To annualize under the i.i.d. assumption, scale the standard deviation by √252 before computing the quantile.
 Results from the default Tangency Portfolio show Historical and MC producing more extreme ES values than Parametric — a classic fat tails signal: real returns have heavier tails than the normal distribution predicts.
 
 ---
